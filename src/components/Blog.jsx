@@ -89,15 +89,15 @@ const Blog = () => {
   })
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 bg-[#f4efe3]">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 italic mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#2f2042] italic mb-4">
             Blog & Insights
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#6f677d] max-w-2xl mx-auto">
             Articles, tutorials, and insights on software development, networking, and technology
           </p>
         </div>
@@ -110,9 +110,9 @@ const Blog = () => {
               placeholder="Search articles..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-6 py-3 rounded-lg border-2 border-sky-200 focus:border-sky-600 focus:outline-none transition duration-300 shadow-sm"
+              className="w-full px-6 py-3 rounded-lg border-2 border-[#e8dfcb] focus:border-[#2f2042] focus:outline-none transition duration-300 shadow-sm bg-[#fffdf8]"
             />
-            <span className="absolute right-4 top-3 text-sky-600 text-xl">🔍</span>
+            <span className="absolute right-4 top-3 text-[#2f2042] text-xl">🔍</span>
           </div>
         </div>
 
@@ -124,8 +124,8 @@ const Blog = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-2 rounded-lg font-medium transition duration-300 ${
                 selectedCategory === category
-                  ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg'
-                  : 'bg-sky-100 text-gray-700 hover:bg-sky-200'
+                  ? 'bg-[#2f2042] text-white shadow-lg'
+                  : 'bg-[#fff7df] text-[#4a345f] hover:bg-[#f9e9b8]'
               }`}
             >
               {category}
@@ -139,35 +139,35 @@ const Blog = () => {
             filteredPosts.map((post) => (
               <article
                 key={post.id}
-                className="bg-sky-50 rounded-xl border border-sky-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-sky-400 hover:transform hover:scale-105 cursor-pointer"
+                className="bg-[#fffdf8] rounded-xl border border-[#e8dfcb] overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-[#f0bc2f] hover:transform hover:scale-105 cursor-pointer"
               >
                 {/* Card Header */}
-                <div className="h-32 bg-gradient-to-br from-sky-400 to-blue-600 p-6 flex items-end">
-                  <span className="text-sm font-semibold bg-white bg-opacity-20 text-white px-3 py-1 rounded-full backdrop-blur-sm">
+                <div className="h-32 bg-[#2f2042] p-6 flex items-end">
+                  <span className="text-sm font-semibold bg-[#f0bc2f] text-[#2f2042] px-3 py-1 rounded-full">
                     {post.category}
                   </span>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-gray-800 italic line-clamp-2 hover:text-sky-600 transition">
+                  <h3 className="text-xl font-bold text-[#2f2042] italic line-clamp-2 hover:text-[#4a345f] transition">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                  <p className="text-[#6f677d] text-sm leading-relaxed line-clamp-2">
                     {post.description}
                   </p>
 
                   {/* Meta Info */}
-                  <div className="flex items-center justify-between text-xs text-gray-500 pt-2 border-t border-sky-200">
+                  <div className="flex items-center justify-between text-xs text-[#81798d] pt-2 border-t border-[#e8dfcb]">
                     <div className="flex items-center gap-2">
                       <span>📅 {post.date}</span>
                     </div>
-                    <span className="text-sky-600 font-medium">{post.readTime}</span>
+                    <span className="text-[#2f2042] font-medium">{post.readTime}</span>
                   </div>
 
                   {/* Read More Button */}
-                  <button className="w-full mt-4 px-4 py-2 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-600 transition duration-300 transform hover:translate-y-[-2px]">
+                  <button className="w-full mt-4 px-4 py-2 bg-[#2f2042] text-white font-semibold rounded-lg hover:bg-[#4a345f] transition duration-300 transform hover:translate-y-[-2px]">
                     Read More →
                   </button>
                 </div>
@@ -175,14 +175,14 @@ const Blog = () => {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-xl text-gray-600">No articles found. Try adjusting your filters.</p>
+              <p className="text-xl text-[#6f677d]">No articles found. Try adjusting your filters.</p>
             </div>
           )}
         </div>
 
         {/* Pagination or Load More */}
         <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-white border-2 border-sky-400 text-sky-600 font-semibold rounded-lg hover:bg-sky-50 transition duration-300">
+          <button className="px-8 py-3 bg-[#fffdf8] border-2 border-[#f0bc2f] text-[#2f2042] font-semibold rounded-lg hover:bg-[#f9e9b8] transition duration-300">
             Load More Articles
           </button>
         </div>

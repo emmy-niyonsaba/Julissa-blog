@@ -1,6 +1,24 @@
 import React, { useState } from 'react'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import EmailIcon from '@mui/icons-material/Email'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import HandshakeIcon from '@mui/icons-material/Handshake'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import LightbulbIcon from '@mui/icons-material/Lightbulb'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import PhoneIcon from '@mui/icons-material/Phone'
+import PublicIcon from '@mui/icons-material/Public'
+import SendIcon from '@mui/icons-material/Send'
+import TrackChangesIcon from '@mui/icons-material/TrackChanges'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import BoltIcon from '@mui/icons-material/Bolt'
+import XIcon from '@mui/icons-material/X'
 
 const Contact = () => {
+  const WHATSAPP_NUMBER = '000000000000'
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,8 +38,19 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData)
+
+    const message = [
+      'Hello, I want to connect with you.',
+      '',
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Subject: ${formData.subject}`,
+      `Message: ${formData.message}`
+    ].join('\n')
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+
     setSubmitted(true)
     setFormData({ name: '', email: '', subject: '', message: '' })
     
@@ -32,73 +61,67 @@ const Contact = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com',
-      icon: '⚙️',
-      color: 'hover:text-gray-700'
+      url: '#',
+      icon: GitHubIcon,
+      color: 'hover:text-[#2f2042]'
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com',
-      icon: '💼',
-      color: 'hover:text-blue-600'
+      url: '#',
+      icon: LinkedInIcon,
+      color: 'hover:text-[#2f2042]'
     },
     {
-      name: 'Twitter',
-      url: 'https://twitter.com',
-      icon: '🐦',
-      color: 'hover:text-sky-500'
+      name: 'X (Twitter)',
+      url: '#',
+      icon: XIcon,
+      color: 'hover:text-[#2f2042]'
     },
     {
       name: 'Instagram',
-      url: 'https://instagram.com',
-      icon: '📸',
-      color: 'hover:text-pink-500'
+      url: '#',
+      icon: InstagramIcon,
+      color: 'hover:text-[#2f2042]'
     },
     {
       name: 'Facebook',
-      url: 'https://facebook.com',
-      icon: '👥',
-      color: 'hover:text-blue-500'
-    },
-    {
-      name: 'Email',
-      url: 'mailto:hello@example.com',
-      icon: '✉️',
-      color: 'hover:text-red-500'
+      url: '#',
+      icon: FacebookIcon,
+      color: 'hover:text-[#2f2042]'
     }
   ]
 
   const contactInfo = [
     {
-      icon: '📧',
+      icon: EmailIcon,
       title: 'Email',
       value: 'emmanuel@example.com',
       link: 'mailto:emmanuel@example.com'
     },
     {
-      icon: '💬',
-      title: 'Telegram',
-      value: '@emmanueldev',
-      link: '#'
-    },
-    {
-      icon: '📞',
+      icon: PhoneIcon,
       title: 'Phone',
       value: '+1 (555) 123-4567',
       link: 'tel:+15551234567'
+    },
+    {
+      icon: LinkedInIcon,
+      title: 'LinkedIn',
+      value: 'linkedin.com/in/your-profile',
+      link: '#'
     }
   ]
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-white to-sky-50">
+    <section id="contact" className="py-20 bg-[#f4efe3]">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 italic mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#2f2042] italic mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#6f677d] max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you. Reach out anytime!
           </p>
         </div>
@@ -109,15 +132,15 @@ const Contact = () => {
             <a
               key={idx}
               href={info.link}
-              className="bg-white rounded-xl border-2 border-sky-200 p-6 hover:border-sky-400 hover:shadow-lg transition duration-300 text-center group"
+              className="bg-[#fffdf8] rounded-xl border-2 border-[#e8dfcb] p-6 hover:border-[#f0bc2f] hover:shadow-lg transition duration-300 text-center group"
             >
               <div className="text-5xl mb-4 group-hover:scale-110 transition duration-300">
-                {info.icon}
+                <info.icon sx={{ fontSize: 48, color: '#2f2042' }} />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 italic mb-2">
+              <h3 className="text-xl font-bold text-[#2f2042] italic mb-2">
                 {info.title}
               </h3>
-              <p className="text-gray-600 font-medium hover:text-sky-600 transition duration-300">
+              <p className="text-[#6f677d] font-medium hover:text-[#2f2042] transition duration-300">
                 {info.value}
               </p>
             </a>
@@ -128,8 +151,8 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           
           {/* Contact Form */}
-          <div className="bg-white rounded-xl border-2 border-sky-200 p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-800 italic mb-6">
+          <div className="bg-[#fffdf8] rounded-xl border-2 border-[#e8dfcb] p-8 shadow-lg">
+            <h3 className="text-2xl font-bold text-[#2f2042] italic mb-6">
               Send Me a Message
             </h3>
 
@@ -144,7 +167,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name Input */}
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 italic mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-[#4a345f] italic mb-2">
                   Full Name *
                 </label>
                 <input
@@ -154,14 +177,14 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border-2 border-sky-200 focus:border-sky-600 focus:outline-none transition duration-300"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-[#e8dfcb] focus:border-[#2f2042] focus:outline-none transition duration-300"
                   placeholder="John Doe"
                 />
               </div>
 
               {/* Email Input */}
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 italic mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-[#4a345f] italic mb-2">
                   Email Address *
                 </label>
                 <input
@@ -171,14 +194,14 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border-2 border-sky-200 focus:border-sky-600 focus:outline-none transition duration-300"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-[#e8dfcb] focus:border-[#2f2042] focus:outline-none transition duration-300"
                   placeholder="john@example.com"
                 />
               </div>
 
               {/* Subject Input */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 italic mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-[#4a345f] italic mb-2">
                   Subject *
                 </label>
                 <input
@@ -188,14 +211,14 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border-2 border-sky-200 focus:border-sky-600 focus:outline-none transition duration-300"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-[#e8dfcb] focus:border-[#2f2042] focus:outline-none transition duration-300"
                   placeholder="Project Inquiry"
                 />
               </div>
 
               {/* Message Textarea */}
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 italic mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-[#4a345f] italic mb-2">
                   Message *
                 </label>
                 <textarea
@@ -205,7 +228,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 rounded-lg border-2 border-sky-200 focus:border-sky-600 focus:outline-none transition duration-300 resize-none"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-[#e8dfcb] focus:border-[#2f2042] focus:outline-none transition duration-300 resize-none"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </div>
@@ -213,9 +236,13 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-sky-400/50 transition-all duration-300 transform hover:scale-105"
+                className="w-full px-6 py-3 bg-[#2f2042] text-white font-bold rounded-lg hover:shadow-lg hover:shadow-[#2f2042]/30 transition-all duration-300 transform hover:scale-105"
               >
-                Send Message →
+                <span className="inline-flex items-center gap-2">
+                  <WhatsAppIcon sx={{ fontSize: 20 }} />
+                  Send Message
+                  <SendIcon sx={{ fontSize: 18 }} />
+                </span>
               </button>
             </form>
           </div>
@@ -224,41 +251,41 @@ const Contact = () => {
           <div className="space-y-8">
             
             {/* Availability */}
-            <div className="bg-gradient-to-br from-sky-100 to-blue-50 rounded-xl border-2 border-sky-300 p-6">
-              <h3 className="text-xl font-bold text-gray-800 italic mb-4">
+            <div className="bg-[#fff7df] rounded-xl border-2 border-[#f3d57d] p-6">
+              <h3 className="text-xl font-bold text-[#2f2042] italic mb-4">
                 Availability
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">⏰</span>
+                  <AccessTimeIcon sx={{ fontSize: 28, color: '#2f2042' }} />
                   <div>
-                    <p className="font-semibold text-gray-800 italic">Response Time</p>
-                    <p className="text-gray-600 text-sm">Usually within 24 hours</p>
+                    <p className="font-semibold text-[#2f2042] italic">Response Time</p>
+                    <p className="text-[#6f677d] text-sm">Usually within 24 hours</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">✅</span>
+                  <CheckCircleIcon sx={{ fontSize: 28, color: '#2f2042' }} />
                   <div>
-                    <p className="font-semibold text-gray-800 italic">Current Status</p>
-                    <p className="text-gray-600 text-sm">Open to new opportunities</p>
+                    <p className="font-semibold text-[#2f2042] italic">Current Status</p>
+                    <p className="text-[#6f677d] text-sm">Open to new opportunities</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">🌍</span>
+                  <PublicIcon sx={{ fontSize: 28, color: '#2f2042' }} />
                   <div>
-                    <p className="font-semibold text-gray-800 italic">Work Mode</p>
-                    <p className="text-gray-600 text-sm">Remote & On-site Projects</p>
+                    <p className="font-semibold text-[#2f2042] italic">Work Mode</p>
+                    <p className="text-[#6f677d] text-sm">Remote & On-site Projects</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="bg-white rounded-xl border-2 border-sky-200 p-6">
-              <h3 className="text-xl font-bold text-gray-800 italic mb-4">
+            <div className="bg-[#fffdf8] rounded-xl border-2 border-[#e8dfcb] p-6">
+              <h3 className="text-xl font-bold text-[#2f2042] italic mb-4">
                 Connect With Me
               </h3>
-              <p className="text-gray-600 text-sm mb-6">
+              <p className="text-[#6f677d] text-sm mb-6">
                 Follow me on social media for updates and insights.
               </p>
               <div className="grid grid-cols-3 gap-4">
@@ -269,31 +296,31 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={social.name}
-                    className={`flex items-center justify-center w-full py-3 bg-gradient-to-br from-sky-100 to-blue-100 rounded-lg border border-sky-200 text-2xl transition-all duration-300 hover:scale-110 ${social.color}`}
+                    className={`flex items-center justify-center w-full py-3 bg-[#fff7df] rounded-lg border border-[#f3d57d] text-2xl transition-all duration-300 hover:scale-110 ${social.color}`}
                   >
-                    {social.icon}
+                    <social.icon sx={{ fontSize: 28 }} />
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-gradient-to-br from-blue-100 to-sky-100 rounded-xl border-2 border-blue-300 p-6">
-              <h3 className="text-lg font-bold text-gray-800 italic mb-4">
+            <div className="bg-[#fff7df] rounded-xl border-2 border-[#f3d57d] p-6">
+              <h3 className="text-lg font-bold text-[#2f2042] italic mb-4">
                 Why Collaborate With Me?
               </h3>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-gray-700">
-                  <span className="text-sky-600 text-lg">⚡</span> Fast turnaround times
+                <li className="flex items-center gap-2 text-[#4a345f]">
+                  <BoltIcon sx={{ fontSize: 20, color: '#2f2042' }} /> Fast turnaround times
                 </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <span className="text-sky-600 text-lg">🎯</span> Attention to detail
+                <li className="flex items-center gap-2 text-[#4a345f]">
+                  <TrackChangesIcon sx={{ fontSize: 20, color: '#2f2042' }} /> Attention to detail
                 </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <span className="text-sky-600 text-lg">💡</span> Creative solutions
+                <li className="flex items-center gap-2 text-[#4a345f]">
+                  <LightbulbIcon sx={{ fontSize: 20, color: '#2f2042' }} /> Creative solutions
                 </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <span className="text-sky-600 text-lg">🤝</span> Great communication
+                <li className="flex items-center gap-2 text-[#4a345f]">
+                  <HandshakeIcon sx={{ fontSize: 20, color: '#2f2042' }} /> Great communication
                 </li>
               </ul>
             </div>

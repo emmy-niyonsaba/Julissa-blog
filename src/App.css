@@ -3,6 +3,23 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --color-bg: #f4efe3;
+  --color-surface: #fffdf8;
+  --color-surface-soft: #efe7d5;
+  --color-primary: #2f2042;
+  --color-primary-soft: #4a345f;
+  --color-accent: #f0bc2f;
+  --color-accent-soft: #f9e3a6;
+  --color-text: #2f2a3a;
+  --color-muted: #6f677d;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
 /* Custom Animations */
 @keyframes fadeInUp {
   from {
@@ -39,10 +56,10 @@
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 20px rgba(240, 188, 47, 0.35);
   }
   50% {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 30px rgba(240, 188, 47, 0.6);
   }
 }
 
@@ -59,16 +76,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #e8dfcb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #0ea5e9 0%, #2563eb 100%);
+  background: #4a345f;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #06b6d4 0%, #1d4ed8 100%);
+  background: #2f2042;
 }
 
 /* Link Styles */
@@ -102,11 +119,11 @@ section {
 
 /* Selection Color */
 ::selection {
-  background-color: #0ea5e9;
-  color: white;
+  background-color: #f0bc2f;
+  color: #2f2042;
 }
 
 ::-moz-selection {
-  background-color: #0ea5e9;
-  color: white;
+  background-color: #f0bc2f;
+  color: #2f2042;
 }

@@ -65,15 +65,15 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-sky-50 to-white">
+    <section id="projects" className="py-20 bg-[#f4efe3]">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 italic mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#2f2042] italic mb-4">
             Featured Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#6f677d] max-w-2xl mx-auto">
             Showcase of innovative solutions combining development expertise and networking knowledge
           </p>
         </div>
@@ -83,41 +83,37 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-xl border-2 border-sky-100 overflow-hidden hover:shadow-2xl hover:border-sky-400 transition-all duration-300 hover:transform hover:-translate-y-2"
+              className="bg-[#fffdf8] rounded-xl border-2 border-[#e8dfcb] overflow-hidden hover:shadow-2xl hover:border-[#f0bc2f] transition-all duration-300 hover:transform hover:-translate-y-2"
             >
-              {/* Project Header */}
-              <div className="h-40 bg-gradient-to-br from-sky-300 to-blue-500 flex items-center justify-center text-6xl">
-                {project.image}
-              </div>
-
+             
               {/* Project Body */}
               <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-gray-800 italic">
+                <h3 className="text-2xl font-bold text-[#2f2042] italic">
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed line-clamp-2">
+                <p className="text-[#6f677d] leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Highlights */}
                 <div className="space-y-2">
                   {project.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
-                      <span className="text-sky-600 font-bold">✓</span>
+                    <div key={idx} className="flex items-center gap-2 text-sm text-[#4a345f]">
+                      <span className="text-[#2f2042] font-bold">✓</span>
                       <span>{highlight}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Technologies */}
-                <div className="pt-4 border-t border-sky-100">
-                  <p className="text-xs font-semibold text-gray-500 mb-2 uppercase italic">Technologies</p>
+                <div className="pt-4 border-t border-[#e8dfcb]">
+                  <p className="text-xs font-semibold text-[#81798d] mb-2 uppercase italic">Technologies</p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-semibold"
+                        className="px-3 py-1 bg-[#fff7df] text-[#4a345f] border border-[#f3d57d] rounded-full text-xs font-semibold"
                       >
                         {tech}
                       </span>
@@ -129,13 +125,13 @@ const Projects = () => {
                 <div className="flex gap-3 pt-4">
                   <a
                     href={project.github}
-                    className="flex-1 px-4 py-2 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition duration-300 text-center text-sm"
+                    className="flex-1 px-4 py-2 bg-[#4a345f] text-white font-semibold rounded-lg hover:bg-[#2f2042] transition duration-300 text-center text-sm"
                   >
                     GitHub →
                   </a>
                   <a
                     href={project.live}
-                    className="flex-1 px-4 py-2 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-600 transition duration-300 text-center text-sm"
+                    className="flex-1 px-4 py-2 bg-[#2f2042] text-white font-semibold rounded-lg hover:bg-[#4a345f] transition duration-300 text-center text-sm"
                   >
                     Live Demo →
                   </a>
@@ -147,12 +143,12 @@ const Projects = () => {
 
         {/* More Projects CTA */}
         <div className="text-center mt-16">
-          <p className="text-gray-600 mb-4">
+          <p className="text-[#6f677d] mb-4">
             Interested in more projects? Check out my GitHub for additional work.
           </p>
           <a
             href="https://github.com"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-sky-400/50 transition-all duration-300 transform hover:scale-105"
+            className="inline-block px-8 py-3 bg-[#2f2042] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-[#2f2042]/30 transition-all duration-300 transform hover:scale-105"
           >
             View All Projects on GitHub →
           </a>
