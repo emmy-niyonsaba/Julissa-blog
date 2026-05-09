@@ -125,13 +125,13 @@ const Projects = () => {
                 <div className="flex gap-3 pt-4">
                   <a
                     href={project.github}
-                    className="flex-1 px-4 py-2 bg-[#4a345f] text-white font-semibold rounded-lg hover:bg-[#2f2042] transition duration-300 text-center text-sm"
+                    className=' border-2 border-[#f86868] rounded-md p-2  hover:scale-x-[1.1] hover:scale-y-[1.1]'
                   >
                     GitHub →
                   </a>
                   <a
                     href={project.live}
-                    className="flex-1 px-4 py-2 bg-[#2f2042] text-white font-semibold rounded-lg hover:bg-[#4a345f] transition duration-300 text-center text-sm"
+                    className=' bg-[#f86868] p-2 rounded-md text-white hover:scale-x-[1.1] hover:scale-y-[1.1]'
                   >
                     Live Demo →
                   </a>
@@ -148,8 +148,8 @@ const Projects = () => {
           </p>
           <a
             href="https://github.com"
-            className="inline-block px-8 py-3 bg-[#2f2042] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-[#2f2042]/30 transition-all duration-300 transform hover:scale-105"
-          >
+             className=' border-2 border-[#f86868] rounded-md p-2 hover:scale-yyyx-[1.1] hover:scale-y-[1.1]' 
+cl          >
             View All Projects on GitHub →
           </a>
         </div>

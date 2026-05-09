@@ -1,12 +1,8 @@
 
 import React from 'react'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import ComputerIcon from '@mui/icons-material/Computer'
-import PublicIcon from '@mui/icons-material/Public'
-import SecurityIcon from '@mui/icons-material/Security'
 
 const About = () => {
-  return (
+  return (c
     <section id="about" className="py-20 bg-[#f4efe3]">
       <div className="max-w-7xl mx-auto px-6">
         
@@ -36,21 +32,21 @@ const About = () => {
               <h3 className="text-2xl font-bold text-[#2f2042] italic">Core Expertise</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <ComputerIcon sx={{ fontSize: 28, color: '#f0bc2f', marginTop: '2px' }} />
+                  <span className="text-[#f0bc2f] text-2xl mt-1">💻</span>
                   <div>
                     <p className="font-semibold text-[#2f2042] italic">Web Development</p>
                     <p className="text-[#6f677d] text-sm">React, Node.js, Express, MongoDB, REST APIs</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <PublicIcon sx={{ fontSize: 28, color: '#f0bc2f', marginTop: '2px' }} />
+                  <span className="text-[#f0bc2f] text-2xl mt-1">🌐</span>
                   <div>
                     <p className="font-semibold text-[#2f2042] italic">Networking Administration</p>
                     <p className="text-[#6f677d] text-sm">Cisco routing, VLANs, network security, server configuration</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <SecurityIcon sx={{ fontSize: 28, color: '#f0bc2f', marginTop: '2px' }} />
+                  <span className="text-[#f0bc2f] text-2xl mt-1">🔒</span>
                   <div>
                     <p className="font-semibold text-[#2f2042] italic">Security & DevOps</p>
                     <p className="text-[#6f677d] text-sm">Cloud platforms, CI/CD pipelines, infrastructure security</p>
@@ -88,19 +84,19 @@ const About = () => {
               <h4 className="text-lg font-bold text-[#2f2042] italic mb-4">Highlights</h4>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2 text-[#4a345f]">
-                  <CheckCircleIcon sx={{ fontSize: 18, color: '#2f2042' }} /> Full-stack web application development
+                  <span className="text-[#2f2042]">✓</span> Full-stack web application development
                 </li>
                 <li className="flex items-center gap-2 text-[#4a345f]">
-                  <CheckCircleIcon sx={{ fontSize: 18, color: '#2f2042' }} /> Enterprise network infrastructure design
+                  <span className="text-[#2f2042]">✓</span> Enterprise network infrastructure design
                 </li>
                 <li className="flex items-center gap-2 text-[#4a345f]">
-                  <CheckCircleIcon sx={{ fontSize: 18, color: '#2f2042' }} /> Cloud platform expertise (AWS, Azure)
+                  <span className="text-[#2f2042]">✓</span> Cloud platform expertise (AWS, Azure)
                 </li>
                 <li className="flex items-center gap-2 text-[#4a345f]">
-                  <CheckCircleIcon sx={{ fontSize: 18, color: '#2f2042' }} /> Security-first development practices
+                  <span className="text-[#2f2042]">✓</span> Security-first development practices
                 </li>
                 <li className="flex items-center gap-2 text-[#4a345f]">
-                  <CheckCircleIcon sx={{ fontSize: 18, color: '#2f2042' }} /> Team leadership and mentoring
+                  <span className="text-[#2f2042]">✓</span> Team leadership and mentoring
                 </li>
               </ul>
             </div>
